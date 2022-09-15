@@ -1,27 +1,27 @@
 #include "main.h"
 
 /**
- * print_diagonal - a function that draws a diagonal line on the terminal
- * @n: input number of times '\' shold be printed
- * Return: a diagonal
+ * print_square - a function that prints a square, followed by a new line
+ * @size: size of both width and length
+ * Return: a square made of '#'
  */
-void print_diagonal(int n)
+void print_square(int size)
 {
-	int i, j;
+	int co, ro;
 
-	if (n <= 0)
+	if (size <= 0)
 	{
 		_putchar('\n');
 	}
 	else
 	{
-		for (i = 1; i <= n; i++)
+		for (co = 1; co <= size; co++)
 		{
-			for (j = 1; j < i; j++)
+			_putchar('#');
+			for (ro = 2; ro <= size; ro++)
 			{
-				_putchar(' ');
+				_putchar('#');
 			}
-			_putchar('\\');
 			_putchar('\n');
 		}
 	}
