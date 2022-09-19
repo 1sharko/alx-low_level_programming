@@ -1,46 +1,77 @@
-#include "main.h"
-#include "2-strlen.c"
-
-/**
- * _atoi - converts string to integer
- * @s: string to convert
- *
- * Return: returns integer value
- */
-int _atoi(char *s)
-{
-	int i;
-	int np = 0;
-	int c;
-	int d = 1;
-	int num = 0;
-
-	for (i = 0; i < _strlen(s); i++)
-	{
-		if (!(s[i] >= '0' && s[i] <= '9') && c > 0)
-			break;
-		if (s[i] == '-')
-			np--;
-		if (s[i] == '+')
-			np++;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			c++;
-		}
-	}
-	while (c > 0)
-	{
-		num += ((s[i - 1] - '0') * d);
-		i--;
-		c--;
-		d *= 10;
-	}
-	if (np >= 0)
-	{
-		num *= 1;
-	} else
-	{
-		num *= -1;
-	}
-	return (num);
+[4:57 PM, 9/17/2022] +234 905 632 4351: #include "main.h"                                                                                                                                             
+                                                                                                                                                              
+#define Size    10                                                                                                                                            
+                                                                                                                                                              
+/**                                                                                                                                                           
+ * times_table - prints the 9 times table starting with 0.                                                                                                    
+ *                                                                                                                                                            
+ * Return: Nothing.                                                                                                                                           
+ *                                                                                                                                                            
+ */                                                                                                                                                           
+                                                                                                                                                              
+void times_table(void)                                                                                                                                        
+{                                                                                                                                                             
+        int i;                                                                                                                                                
+        int j;                                                                                                                                                
+        int k;                                                                                                                                                
+        int l;                                                                                                                                                
+        int p;                                                                                                                                                
+        int v;                                                                                                                                                
+        int Multiples[Size][Size];                                                                                                                            
+        int Arrya[Size] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};                                                                                                     
+                                                                                                                                                              
+        for (i = 0; i < Size; i++)                                                                                                                            
+        {                                                                                                                                                     
+                for (j = 0; j < Size; j++)                                                                                                                    
+                {                                                                                                                                             
+                        Multiples[i][j] = (Arrya[i] * Arrya[j]);                                                                                              
+                }                                                                                                                                             
+        }                                                                                                                                                     
+                                                                                                                                                              
+        for (k = 0; k < Size; k++)                                                                                                                            
+        {                                                                                                                                                     
+                for (l = 0; l < Size; l++)                                                                                                                    
+                {                                                                                                                                             
+                        if (Multiples[k][l] > 9)                                                                                                              
+                        {                                                                                                                                     
+                                if ((k != 0) && (Multiples[k][l] <= 9))                                                                                       
+                                {                                                                                                                             
+                                        _putchar(' ');                                                                                                        
+                                }                                                                                                                             
+                                                                                                                                                              
+                                p = (Multiples[k][l] / Size);                                                                                                 
+                                                                                                                                                              
+                                v = (Multiples[k][l] % Size);
+[4:59 PM, 9/17/2022] +234 905 632 4351: _putchar('0' + p);                                                                                                            
+                                                                                                                                                              
+                                _putchar('0' + v);                                                                                                            
+                        }                                                                                                                                     
+                        else                                                                                                                                  
+                        {                                                                                                                                     
+                                _putchar('0' + Multiples[k][l]);                                                                                              
+                        }                                                                                                                                     
+                                                                                                                                                              
+                        if (l < 9)                                                                                                                            
+                        {                                                                                                                                     
+                                _putchar(',');                                                                                                                
+                                                                                                                                                              
+                                _putchar(' ');                                                                                                                
+                        }                                                                                                                                     
+                                                                                                                                                              
+                        if (((k <= 4) && (l >= 1)) && (Multiples[k][l] <= 8))                                                                                 
+                        {                                                                                                                                     
+                                if ((((k == 2) && (l == 4)) || ((k == 4) && (l == 2))) && (Multiples[k][l] == 8))                                             
+                                {                                                                                                                             
+                                        ;                                                                                                                     
+                                }                                                                                                                             
+                                else                                                                                                                          
+                                {                                                                                                                             
+                                        _putchar(' ');                                                                                                        
+                                }                                                                                                                             
+                        }                                                                                                                                     
+                }                                                                                                                                             
+                                                                                                                                                              
+                _putchar('\n');                                                                                                                               
+                                                                                                                                                              
+        }                                                                                                                                                     
 }
