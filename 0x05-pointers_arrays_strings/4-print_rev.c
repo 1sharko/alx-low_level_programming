@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-hbnnmnvbbvnn
-=======
 #include "main.h"
 
 /**
@@ -19,4 +16,3 @@ void print_rev(char *s)
 
 	_putchar('\n');
 }
->>>>>>> 54c674575bfdee212372cfb3f163f8367b398f40
